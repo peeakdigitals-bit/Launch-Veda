@@ -1,0 +1,54 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global default-deny safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    function isValidId(id) {
+      return id is string 
+        && id.size() > 0 
+        && id.size() <= 128 
+        && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isValidLead(data) {
+      return data.keys().hasAll(['name', 'phone', 'email', 'type', 'budget', 'message', 'createdAt'])
+        && data.keys().size() == 7
+        && data.name is string 
+        && data.name.size() > 0 
+        && data.name.size() <= 150
+        && data.phone is string 
+        && data.phone.size() >= 10 
+        && data.phone.size() <= 25
+        && data.email is string 
+        && data.email.size() <= 256 
+        && data.email.matches('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$')
+        && data.type is string 
+        && data.type in ['Cosmetics', 'Perfumes', 'Ayurveda', 'Wellness', 'Other']
+        && data.budget is string 
+        && data.budget.size() > 0 
+        && data.budget.size() <= 100
+        && data.message is string 
+        && data.message.size() <= 4000
+        && data.createdAt == request.time;
+    }
+
+    // Leads collection match path
+    match /leads/{leadId} {
+      allow create: if isValidId(leadId) && isValidLead(request.resource.data);
+      allow read, update, delete: if isAdmin();
+    }
+  }
+}

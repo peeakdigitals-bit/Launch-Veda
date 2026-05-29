@@ -1,0 +1,49 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Lead",
+      "description": "User lead capture submission from the Contact Us form.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The client's full name."
+        },
+        "phone": {
+          "type": "string",
+          "description": "The client's phone number."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The client's email address."
+        },
+        "type": {
+          "type": "string",
+          "enum": ["Cosmetics", "Perfumes", "Ayurveda", "Wellness", "Other"],
+          "description": "The type of brand/launch they are looking to build."
+        },
+        "budget": {
+          "type": "string",
+          "description": "The budget range for the project."
+        },
+        "message": {
+          "type": "string",
+          "description": "Additional context or brand description."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp when the inquiry was submitted."
+        }
+      },
+      "required": ["name", "phone", "email", "type", "budget", "message", "createdAt"]
+    }
+  },
+  "firestore": {
+    "leads/{leadId}": {
+      "schema": "Lead",
+      "description": "Inquiries from prospective clients captured via the ContactUs section."
+    }
+  }
+}

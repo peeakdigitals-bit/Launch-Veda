@@ -1,0 +1,35 @@
+# ==========================================
+# Robots.txt for Launch Veda
+# Optimized for Google, Bing, Yahoo & AI Engines
+# ==========================================
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /config/
+Disallow: /api/
+
+# Specialized AI Search Bot Crawler Rules
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Sitemap Location Indicator
+Sitemap: https://launchveda.com/sitemap.xml

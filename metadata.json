@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Remix: Remix: Remix: Launch Veda 3.0",
+  "description": "A premium cinematic brand landing page with immersive GSAP scroll effects, smooth inertia scrolling, and perspective card showcases.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
