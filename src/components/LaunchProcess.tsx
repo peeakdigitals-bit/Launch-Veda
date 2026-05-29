@@ -13,12 +13,12 @@ import {
   ChevronRight
 } from 'lucide-react';
 
-import stage1 from '@/stage1.png';
-import stage2 from '@/stage2.png';
-import stage3 from '@/stage3.png';
-import stage4 from '@/stage4.png';
-import stage5 from '@/stage5.png';
-import stage6 from '@/stage6.png';
+const stage1 = '/stage1.png';
+const stage2 = '/stage2.png';
+const stage3 = '/stage3.png';
+const stage4 = '/stage4.png';
+const stage5 = '/stage5.png';
+const stage6 = '/stage6.png';
 
 interface ProcessStep {
   id: number;

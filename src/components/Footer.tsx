@@ -14,7 +14,8 @@ import {
   FileText,
   ShieldAlert
 } from 'lucide-react';
-import lvLogo from '@/assets/lv_logo_new.png';
+
+const lvLogo = '/assets/lv_logo_new.png';
 
 // Premium custom Pinterest SVG icon for dark mode alignment
 function PinterestIcon({ className = "w-4 h-4" }: { className?: string }) {

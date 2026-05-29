@@ -2,11 +2,11 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Sparkles, Layers3, ArrowUpRight } from 'lucide-react';
 
-import p7 from '@/7.png';
-import p8 from '@/8.png';
-import p9 from '@/9.png';
-import p10 from '@/10.png';
-import p11 from '@/11.png';
+const p7 = '/7.png';
+const p8 = '/8.png';
+const p9 = '/9.png';
+const p10 = '/10.png';
+const p11 = '/11.png';
 
 interface ProjectItem {
   id: string;

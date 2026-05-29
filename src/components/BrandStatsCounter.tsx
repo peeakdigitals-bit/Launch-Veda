@@ -10,8 +10,8 @@ import {
   Sparkles,
   Award
 } from 'lucide-react';
-import buildBrandImg from '@/build Brand.png';
-import p11 from '@/11.png';
+
+const buildBrandImg = '/build Brand.png';
 
 interface CounterProps {
   endValue: number;

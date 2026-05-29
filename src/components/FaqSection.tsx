@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { HelpCircle, ChevronDown, Sparkles, MessageSquare } from 'lucide-react';
-import buildBrand1 from '@/build Brand (1).png';
+
+const buildBrand1 = '/build Brand (1).png';
 
 interface FaqItem {
   question: string;

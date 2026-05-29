@@ -14,7 +14,7 @@ import {
   MessageCircle,
   MapPin
 } from 'lucide-react';
-import buildBrandGif from '@/build Brand.gif';
+const buildBrandGif = '/build Brand.gif';
 import { collection, doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { db, handleFirestoreError, OperationType } from '../firebase';
 

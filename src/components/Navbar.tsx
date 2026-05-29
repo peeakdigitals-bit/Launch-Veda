@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Phone, Mail, Menu, X, ArrowUpRight } from 'lucide-react';
-import lvLogo from '@/assets/lv_logo_new.png';
+
+const lvLogo = '/assets/lv_logo_new.png';
 
 export default function Navbar({ currentView = 'home' }: { currentView?: 'home' | 'about' | 'contact' }) {
   const [isScrolled, setIsScrolled] = useState(false);

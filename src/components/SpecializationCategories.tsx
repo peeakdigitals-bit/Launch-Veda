@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, ArrowUpRight, Crown, Leaf, HeartPulse, Sparkle } from 'lucide-react';
 
-import perfumeImg from '@/category/Perfume.png';
-import ayurvedaImg from '@/category/Ayurveda.png';
-import supplementImg from '@/category/supplement.png';
-import cosmeticsImg from '@/category/Cosmetics.png';
+const perfumeImg = '/category/Perfume.png';
+const ayurvedaImg = '/category/Ayurveda.png';
+const supplementImg = '/category/supplement.png';
+const cosmeticsImg = '/category/Cosmetics.png';
 
 interface CategoryItem {
   id: string;
